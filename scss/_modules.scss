@@ -1,0 +1,84 @@
+@use "variables" as *;
+@use "mixin" as *;
+// ナビゲーション
+.nav{
+    &-list{
+        display: flex;
+        column-gap: 24px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    &__item{
+        color: $text-brown;
+    }
+    &__partition{
+        width: 1px;
+        height: 16px;
+        background-color: $text-brown;        
+    }
+}
+
+// SNS
+.sns{
+    display: flex;
+    &__link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--blue{
+            background-color: $accent-blue;
+            color: $text-white;
+        }
+
+        &--brown{
+            background-color: $accent-brown;
+            color: $text-white;
+        }
+
+        &--square{
+            width: 64px;
+            height: 64px;
+            font-size: 20px;            
+        }
+
+        &--circle{
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            font-size: 16px;
+        }
+    }
+}
+// ボタン
+.btn{
+    display: block;
+    width: fit-content;
+    padding: 1em 1.5em;
+    margin: 0 auto;
+    background-color: $main-brown;
+    color: $text-white;
+    font-family: $sans-jp;
+    font-size: 16px;
+}
+
+@include mq(sp){
+    width: 100%;text-align: center;
+}
+
+// ハンバーガーメニュー
+.humburger{
+    display: none;
+
+    @include mq(sp){
+        display: flex;
+        flex-flow: column;
+        row-gap: 8px;
+    }
+
+    &__border{
+        width: 32px;
+        height: 1px;
+        background-color: $accent-brown;
+    }
+}
